@@ -1,11 +1,8 @@
 import './App.css';
 import './buttons.scss';
-import Animal from './Components/004/Animal';
+
 import AnimalItem from './Components/004/AnimalItem';
 
-const bu = _ => {
-    return <h2>bubu-bu</h2>
-} 
 
 const animals = [
     {id: 1, type: 'racoon', animalColor: 'skyblue'},
