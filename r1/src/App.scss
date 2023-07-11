@@ -1,0 +1,151 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 2s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sq-bin {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 50px 100px;
+  box-sizing: border-box;
+  .sq {
+    width: 200px;
+    height: 200px;
+    background-color: #80808050;
+    border: 1px solid #808080;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+    color: #fff;
+    border-radius: 10px;
+    &.small {
+      width: 100px;
+      height: 100px;
+      margin: 4px;
+      border-radius: 5px;
+    }
+  }
+}
+fieldset {
+  // border: 2px dashed skyblue;
+  // margin-top: 30px;
+  legend {
+    color: #87cfeba8;
+    font-size: 30px;
+    padding: 0 10px;
+    text-transform: uppercase;
+  }
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  outline: none;
+  background-color: skyblue;
+  color: #fff;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  outline: none;
+  background-color: skyblue;
+  color: #fff;
+  min-width: 200px;
+}
+
+label.checkbox {
+  line-height: 40px;
+  cursor: pointer;
+  &::before {
+    content: '\2610';
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    line-height: 40px;
+    margin-left: 20px;
+    color: gray
+  }
+  &.checked {
+    &::before {
+      content: '\2611';
+      color: orangered;
+    }
+  }
+}
+
+label.radio {
+  line-height: 40px;
+  cursor: pointer;
+  &::before {
+    content: '\25CE';
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    line-height: 40px;
+    margin-left: 20px;
+    color: gray
+  }
+  &.checked {
+    &::before {
+      content: '\25C9';
+      color: orangered;
+    }
+  }
+}
+
+.modal.show {
+  display: block;
+  background-color: #17010845;
+}

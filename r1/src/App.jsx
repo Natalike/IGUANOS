@@ -1,41 +1,42 @@
-import './App.css';
-import './buttons.scss';
-
-import AnimalItem from './Components/004/AnimalItem';
-
-
-const animals = [
-    {id: 1, type: 'racoon', animalColor: 'skyblue'},
-    {id: 2, type: 'cat', animalColor: 'crimson'},
-    {id: 3, type: 'dog', animalColor: 'yellow'},
-    {id: 4, type: 'bird', animalColor: 'green'},
-    {id: 5, type: 'fish', animalColor: 'blue'},
-    {id: 6, type: 'snake', animalColor: 'black'},
-    {id: 7, type: 'lion', animalColor: 'brown'},
-    {id: 8, type: 'tiger', animalColor: 'orange'},
-    {id: 9, type: 'elephant', animalColor: 'gray'},
-    {id: 10, type: 'monkey', animalColor: 'pink'},
-    {id: 11, type: 'cat', animalColor: 'crimson'},
-];
+import { useEffect, useState } from 'react';
+import './App.scss';
+import axios from 'axios';
 
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Hello Props</h1>
-        {/* {bu()}
-        <Animal type='racoon' animalColor='skyblue' />
-        <Animal type='cat' animalColor='crimson' /> */}
-        {/* {
-            animals.map((animal, index) => <div key={index} style={{color: animal.animalColor}}>{animal.type}</div>)
-        } */}
-        {
-            animals.map(animal => <AnimalItem key={animal.id} animal={animal}/>)  
-        }
-      </header>
-    </div>
-  );
+
+    const [users, setUsers] = useState(null);
+
+    // useEffect(_ => {
+    //     axios.get('https://jsonplaceholder.typicode.com/users')
+    //         .then(res => setUsers(res.data))
+    //         .catch(err => console.log(err));
+    // }, []);
+
+    const getUsers = _ => {
+        axios.get('https://jsonplaceholder.typicode.com/users')
+            .then(res => setUsers(res.data))
+            .catch(err => console.log(err));
+    }
+
+    return (
+        <div className="App">
+            <header className="App-header">
+                <h1>API</h1>
+                <ul>
+                    {
+                        users 
+                        ? 
+                        users.map(user => <li key={user.id}>{user.name}</li>)
+                        :
+                        <li>Loading...</li>
+                    }
+                </ul>
+                <button className="nice blue" onClick={getUsers}>Get Users</button>
+            </header>
+        </div>
+
+    );
 }
 
 export default App;

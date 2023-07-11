@@ -1,4 +1,4 @@
-const dogs = ['suo', 'sunius', 'Bobikas', 'kudlius', 'Sarikas', 'avigalvis'];
+const dogs = ['šuo', 'šunius', 'Bobikas', 'kudlius', 'Šarikas', 'avigalvis'];
 
 function Dogs4() {
     return (
@@ -6,14 +6,14 @@ function Dogs4() {
             <h2>Dogs4</h2>
             <div className="sq-bin">
                 {
-                    dogs.filter(dog => dog[0] === dog[0].toLocaleUpperCase()).map((dog, i) =>
-                    <div className="sq" key={i}>
-                        {dog}
-                    </div>
+                    dogs.filter(dog => dog[0] === dog[0].toUpperCase()).map((dog, i) =>
+                        <div className="sq" key={i}>
+                            {dog}
+                        </div>
                     )
                 }
             </div>
         </div>
-    )
+    );
 }
 export default Dogs4;
