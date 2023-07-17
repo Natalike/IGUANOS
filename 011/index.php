@@ -45,18 +45,26 @@ unset($value);
 
 foreach ($spintele as $key => $value) {}
 
-for ($i = 1; $i <= 5; $i++) {
-    echo $i;
-}
+//for ($i = 1; $i <= 5; $i++) {
+//    echo $i;
+//}
 
-foreach (range(1, 5) as $value) {
-    echo $value;
+//foreach (range(1, 5) as $value) {
+//    echo $value;
 
-}
+//}
 
 echo '<br>';
 
 
+
+print_r($spintele);
+
+//masyvo rusiavimas
+
+usort($spintele, function($a, $b) {
+    return $a <=> $b;
+});
 
 print_r($spintele);
 
