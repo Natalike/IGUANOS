@@ -3,10 +3,26 @@
 $niceAnimals = [
     ['name' => 'racoon', 'color' => 'skyblue'],
     ['name' => 'dog', 'color' => 'brown'],
+    ['name' => 'cat', 'color' => 'black'],
+    ['name' => 'pig', 'color' => 'pink'],
+    ['name' => 'cow', 'color' => 'orange'],
+    ['name' => 'chicken', 'color' => 'yellow'],
+    ['name' => 'horse', 'color' => 'darkbrown'],
+    ['name' => 'duck', 'color' => 'green'],
+    ['name' => 'goat', 'color' => 'grey'],
+    ['name' => 'sheep', 'color' => 'lightgrey']
 ];
 
-$niceAnimals = json_encode($niceAnimals);
+// $niceAnimalsJson = json_encode($niceAnimals);
 
-file_put_contents(__DIR__.'\animals.json', $niceAnimals);
+// file_put_contents(__DIR__ . '\animals.json', $niceAnimalsJson);
 
-echo 'animals.json created!';
+
+$niceAnimalsSerealized = serialize($niceAnimals);
+
+file_put_contents(__DIR__ . '\animals.txt', $niceAnimalsSerealized);
+
+
+
+
+echo "animals.json created! \n animals.txt created!";
